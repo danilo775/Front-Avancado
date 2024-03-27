@@ -1,0 +1,16 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div formArrayName="items">
+      <div *ngFor="let item of items.controls; index as i" [formGroupName]="i">
+        <label>
+          <input type="text" formControlName="name">
+        </label>
+        <label>
+          <input type="number" formControlName="quantity">
+        </label>
+        <button type="button" (click)="removeItem(i)">Remove Item</button>
+      </div>
+    </div>
+  
+    <button type="button" (click)="addItem()">Add Item</button>
+    <button type="submit">Submit</button>
+  </form>

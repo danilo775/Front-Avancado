@@ -1,0 +1,34 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div formGroupName="endereco">
+      <label>
+        rua:
+        <input type="text" formControlName="rua">
+      </label>
+      <label>
+        cidade:
+        <input type="text" formControlName="cidade">
+      </label>
+      <label>
+        estado:
+        <input type="text" formControlName="estado">
+      </label>
+    </div>
+    <button type="submit">Submit</button>
+    </form>
+
+<hr>
+
+    <form [formGroup]="autenticacaForm" (ngSubmit)="onSubmit2()">
+        <label>
+          Senha:
+          <input type="password" formControlName="senha">
+        </label>
+        <label>
+          Confirma Senha:
+          <input type="password" formControlName="confirmarSenha">
+        </label>
+        <div *ngIf="autenticacaForm.hasError('diferentes')">
+          Os campos são diferentes!
+        </div>
+      <button type="submit">Submit</button>
+      </form>

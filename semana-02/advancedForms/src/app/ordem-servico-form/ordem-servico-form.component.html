@@ -1,0 +1,18 @@
+<form [formGroup]="ordemDeServicoForm" (ngSubmit)="onSubmit()"  class="ordemServico">
+    <input type="text" formControlName="nomeCliente" placeholder="Nome do Cliente">
+    <input type="text" formControlName="tipoServico" placeholder="Tipo de Serviço">
+    <input type="date" formControlName="dataOrdem">
+    <textarea formControlName="detalhes" placeholder="Detalhes"></textarea>
+    <button type="submit">Enviar</button>
+    <div *ngIf="ordemDeServicoForm.get('tipoServico')?.invalid && ordemDeServicoForm.get('tipoServico')?.dirty">
+      <div *ngIf="ordemDeServicoForm.get('tipoServico')?.errors?.['required']">Tipo de Serviço é obrigatório</div>
+      <div *ngIf="ordemDeServicoForm.get('tipoServico')?.errors?.['tipoServicoInvalido']">Tipo de serviço inválido!!</div>
+    </div>
+    <div *ngIf="ordemDeServicoForm.get('dataOrdem')?.invalid && ordemDeServicoForm.get('dataOrdem')?.dirty">
+      <div *ngIf="ordemDeServicoForm.get('dataOrdem')?.errors?.['required']">Campo Data é obrigatório</div>
+      <div *ngIf="ordemDeServicoForm.get('dataOrdem')?.errors?.['dataInvalida']">A data deve não deve ser menor que a data atual</div>
+    </div>
+  
+  </form>
+
+  

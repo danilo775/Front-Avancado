@@ -1,0 +1,21 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="teste" placeholder="Teste:">   <br/>
+    <div *ngIf="formulario.get('teste')?.invalid && formulario.get('teste')?.dirty">
+      <div *ngIf="formulario.get('teste')?.errors?.['required']">Campo Data é obrigatório</div>
+      <div *ngIf="formulario.get('teste')?.errors?.['campoInvalido']">Campo Inválido!</div>
+    </div>
+    <input type="text" formControlName="teste2" placeholder="Teste2:"> <br/> 
+    <div *ngIf="formulario.get('teste2')?.invalid && formulario.get('teste2')?.dirty">
+      <div *ngIf="formulario.get('teste2')?.errors?.['minlength']">
+        Campo Data deve ter pelo menos {{formulario.get('teste2')?.errors?.['minlength'].requiredLength}} caracteres.
+        Atualmente tem {{formulario.get('teste2')?.errors?.['minlength'].actualLength}}.
+    </div>
+    </div>
+    <input type="text" formControlName="teste3" placeholder="Teste3:">  <br/>
+    <button type="button" (click)="toggleTeste3()">Habilitar ou desabilitar teste3</button> <br/>
+    <input type="text" formControlName="teste4" placeholder="Teste4:">  <br/> 
+    <button type="button" (click)="toggleTeste4()">Ligar teste4 em 3s</button>
+    <br/>
+    <br/>
+    <button type="submit">Enviar</button>
+  </form>
