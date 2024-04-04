@@ -22,11 +22,12 @@ import { FooterComponent } from './components/footer/footer.component';
 
 
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
+import { ToolbarModule } from 'primeng/toolbar';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { ButtonModule } from 'primeng/button';
     InputTextModule,
     ToastModule,
     ButtonModule,
-    NgbModule
+    ToolbarModule,
+
 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AutenticaInterceptor, multi: true}],

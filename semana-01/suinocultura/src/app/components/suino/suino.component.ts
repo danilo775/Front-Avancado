@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BancoService } from '../../services/banco.service';
 import { Suino } from '../../model/suino.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-suino',
@@ -12,7 +13,7 @@ export class SuinoComponent  implements OnInit {
   loadedSuinos:Suino[] = [];
   filterTerm: string = ''; // Adicione uma variável para o termo de filtro
 
-  constructor(private bancoService:BancoService, private rotas:Router, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient,private bancoService:BancoService, private rotas:Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getSuinos();
@@ -28,10 +29,12 @@ export class SuinoComponent  implements OnInit {
 
   // Adicione um novo método para obter suínos filtrados
   getFilteredSuinos() {
-    this.bancoService.getFilteredSuino(this.filterTerm).subscribe(responseData => {
-      console.log(responseData);
-      this.loadedSuinos = responseData;
-      console.log(this.loadedSuinos);
+    const url = `https://suinocultura-27005-default-rtdb.firebaseio.com/posts.json?orderBy="status"&equalTo="${this.filterTerm}"`;
+
+    this.http.get(url).subscribe((response: any) => {
+      // Assumindo que os dados retornados têm a estrutura esperada
+      this.loadedSuinos = Object.values(response);
+      console.log("Tentando aquo de novo",this.loadedSuinos);
     });
   }
 
@@ -56,7 +59,7 @@ export class SuinoComponent  implements OnInit {
     setTimeout(() => {
      this.rotas.navigate(['listarSuinos']);
     }, 2000);
-    
+
   }
-  
+
 }

@@ -1,8 +1,9 @@
 <div class="corpo">
   <form [formGroup]="pesoForm" (ngSubmit)="adicionarPeso()" class="m-3" #formSuino="ngForm">
     <div class="form-group mt-3">
-      <label for="peso" class="form-group mt-3">Peso do Animal:</label>
-      <input type="string" id="peso" formControlName="peso" class="form-control" required>
+      <label for="peso">Peso do Animal:</label>
+      <input type="string" id="peso" formControlName="peso" class="form-control mt-3" required>
+
       <div class="alert alert-danger" *ngIf="!peso?.valid && formSuino.touched">
         <p *ngIf="peso?.errors?.['required']">Peso é obrigatorio</p>
         <p *ngIf="peso?.errors?.['pattern']">Apenas números são permitidos</p>

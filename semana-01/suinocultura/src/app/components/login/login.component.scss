@@ -1,14 +1,14 @@
 
 #corpo {
-    background-color: white; 
+    background-color: white;
     min-height: 1000px;
 }
 #form {
     box-shadow: 1px 1px 5px #000000;
     padding: 30px;
     margin-top: 10px;
-    
-}    
+
+}
 #inscrever{
     border-radius: 5px;
     background-color:white;
@@ -25,9 +25,9 @@ body {
   input.ng-invalid.ng-touched {
     border: 1px solid red;
   }
-  
+
   span.error {
       font-size: 10px;
       color: red;
   }
- 
+

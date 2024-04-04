@@ -5,11 +5,11 @@ import { BancoService } from '../../services/banco.service';
 @Component({
   selector: 'app-suino-form',
   templateUrl: './suino-form.component.html',
-  styleUrl: './suino-form.component.scss'
+  styleUrls: ['./suino-form.component.scss']
 })
 export class SuinoFormComponent {
   suinoForm!: FormGroup;
- 
+
   constructor(private formConstrutor: FormBuilder, private servico: BancoService) { }
 
   ngOnInit() {

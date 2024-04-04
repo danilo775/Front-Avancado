@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AutenticaService } from '../../services/autentica.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Usuario } from '../../model/usuario.model'; // Certifique-se de importar o tipo Usuario
+import { Usuario } from '../../model/usuario.model';
+ // Certifique-se de importar o tipo Usuario
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.inscricao = this.autenticaService.usuario.subscribe(
       (usuario: Usuario) => { // Definindo o tipo do parâmetro 'usuario' como Usuario
-      
+
       });
     this.estaAutenticado = !this.autenticaService.usuario.value ? false : true;
     console.log(this.estaAutenticado);
@@ -33,7 +34,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.estaAutenticado = false;
-    
+
     console.log(this.autenticaService);
     setTimeout(() => {
       this.rotas.navigate(['']);

@@ -5,17 +5,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-peso-form',
   templateUrl: './peso-form.component.html',
-  styleUrl: './peso-form.component.scss'
+  styleUrls: ['./peso-form.component.scss']
 })
 export class PesoFormComponent {
   pesoForm!: FormGroup;
   id:string = '';
- 
+
   constructor(private formConstrutor: FormBuilder, private pesoService: PesoService, private rotas:Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this. pesoForm = this.formConstrutor.group({
-      peso: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],  
+      peso: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       dataPeso: ['', Validators.required],
     });
     this.id = this.route.snapshot.paramMap.get('id')!;
@@ -42,7 +42,7 @@ export class PesoFormComponent {
       }
     });
   }
-  
+
   get peso() {
     return this.pesoForm.get('peso')!;
   }
@@ -67,5 +67,5 @@ export class PesoFormComponent {
     this.pesoService.adicionarPesoSuino(idSuino, pesoData);
     this.pesoForm.reset();
   }
-  
+
 }
