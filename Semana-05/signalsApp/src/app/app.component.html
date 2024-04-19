@@ -1,0 +1,26 @@
+
+
+<select
+    [ngModel]="quantidade()"
+    (change)="onQuantidadeSelecionada($any($event.target).value)">
+  <option *ngFor="let q of qtyDisponivel()">{{ q }}</option>
+</select>
+
+<div>{{quantidade()}}</div>
+
+<div>Aviao: {{ AviaoSelecionado().modelo }}</div>
+<div>Autonomia: {{ AviaoSelecionado().autonomia }}</div>
+<div>Qtde Motores: {{ AviaoSelecionado().qdeMotores }}</div>
+<div>Preco: {{ AviaoSelecionado().preco }}</div>
+
+<hr>
+<app-loading-spinner></app-loading-spinner>
+
+<br>
+<br>
+<br>
+
+<button (click)="nomeSobreNomeSignalExample()">Nome Sobrenome</button>
+<button (click)="alteraSignals()">Altera (console.log)</button>
+
+

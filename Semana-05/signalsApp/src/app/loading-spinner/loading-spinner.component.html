@@ -1,0 +1,12 @@
+<button mat-raised-button color="primary" 
+(click)="loadData()">Carrega Dados</button>
+    <br>
+    <br>
+  <div *ngIf="isLoading()">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div *ngIf="!isLoading()">
+    <p>Dados carregados!!!!</p>
+  </div>
+  <br>
+  <br>
