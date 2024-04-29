@@ -1,0 +1,12 @@
+
+<ul class="task-list">
+  <li *ngFor="let tarefa of tarefas" class="task-item">
+
+
+
+    <button (click)="removeTarefa(tarefa.id)" class="remove-button">Remover</button>
+    <button (click)=" openUpdateTask(tarefa)" class="remove-button">Atualizar</button>
+  </li>
+</ul>
+
+
