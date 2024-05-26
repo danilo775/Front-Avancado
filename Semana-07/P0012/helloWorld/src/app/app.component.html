@@ -1,0 +1,18 @@
+<h1>
+  Nome: {{helloStore.nome()}}<br/>
+  {{helloStore.copiado() === true? 'Copiado' : 'Não Copiado'}}
+  <br/>
+  <br/>
+  Rua: {{helloStore.endereco.rua()}}
+  <br/>
+  Nome Completo: {{helloStore.nomeCompleto()}}
+</h1>
+<hr/>
+
+<button (click)="copiar(helloStore.nome())">Copiar</button>
+<br/>
+<textarea style="margin-top: 40px" id="story" name="story" rows="5" cols="33">
+</textarea>
+<br>
+<br>
+<button (click)="multi()">Multiplicar por 2</button>
