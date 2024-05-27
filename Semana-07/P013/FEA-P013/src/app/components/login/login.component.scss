@@ -1,25 +1,30 @@
-
 #corpo {
   background-color: white;
-  min-height: 1000px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 #form {
   box-shadow: 1px 1px 5px #000000;
   padding: 30px;
   margin-top: 10px;
-
 }
-#inscrever{
+
+#inscrever {
   border-radius: 5px;
-  background-color:white;
+  background-color: white;
 }
-
 
 body {
   margin: 0;
   padding: 0;
-
-
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
 }
 
 input.ng-invalid.ng-touched {
@@ -27,7 +32,6 @@ input.ng-invalid.ng-touched {
 }
 
 span.error {
-    font-size: 10px;
-    color: red;
+  font-size: 10px;
+  color: red;
 }
-

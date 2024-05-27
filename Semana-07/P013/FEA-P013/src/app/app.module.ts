@@ -11,6 +11,8 @@ import { ClienteComponent } from './components/cliente/cliente/cliente.component
 import { FilterPipe } from './pipes/filter.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { EditarClienteComponent } from './components/cliente/editar-cliente/editar-cliente.component';
+import { CadastroPordutoComponent } from './components/produto/cadastro-porduto/cadastro-porduto.component';
+import { ProdutoComponent } from './components/produto/produto/produto.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { EditarClienteComponent } from './components/cliente/editar-cliente/edit
     ClienteComponent,
     FilterPipe,
     HeaderComponent,
-    EditarClienteComponent
+    EditarClienteComponent,
+    CadastroPordutoComponent,
+    ProdutoComponent
   ],
   imports: [
     BrowserModule,
