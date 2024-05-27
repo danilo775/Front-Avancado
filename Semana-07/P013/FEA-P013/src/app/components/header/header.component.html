@@ -1,0 +1,46 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark " *ngIf="estaAutenticado">
+  <a class="navbar-brand  w-25 " style="margin-left: 15px;" id="logo" href="#"routerLink="/listarSuinos">Suino Cultura</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav w-100 align-items-center">
+
+      <li class="nav-item me-2">
+        <a routerLink="/listaCliente" routerLinkActive="active" class="nav-link " *ngIf="estaAutenticado">Home</a>
+      </li>
+
+      <li class="nav-item me-2">
+        <a routerLink="/adiconarCliente" routerLinkActive="active" class="nav-link" *ngIf="estaAutenticado">Adicionar
+          Cliente</a>
+      </li>
+      <li class="nav-item me-2">
+        <a routerLink="/listaCliente" routerLinkActive="active" class="nav-link" *ngIf="estaAutenticado">Listar
+          Cliente</a>
+      </li>
+
+      <li class="nav-item me-2">
+        <a routerLink="/sessao" routerLinkActive="active" class="nav-link" *ngIf="estaAutenticado">Adicionar Produtos</a>
+      </li>
+
+      <li class="nav-item me-2">
+        <a routerLink="/listarSessao" routerLinkActive="active" class="nav-link" *ngIf="estaAutenticado">Listar Produtos</a>
+      </li>
+      <li class="nav-item me-2">
+        <a routerLink="/historico" routerLinkActive="active" class="nav-link" *ngIf="estaAutenticado">Historico</a>
+      </li>
+
+      <li class="nav-item me-2">
+        <a routerLink="/contato" routerLinkActive="active" class="nav-link" *ngIf="estaAutenticado">Contato</a>
+      </li>
+
+      <li class="nav-item me-2 " *ngIf="estaAutenticado">
+        <a class="nav-link " (click)="logout()" style="cursor: pointer;">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
