@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,9 +11,13 @@ import { CadastroClienteComponent } from './components/cliente/cadastro-cliente/
 import { ClienteComponent } from './components/cliente/cliente/cliente.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HeaderComponent } from './components/header/header.component';
-import { EditarClienteComponent } from './components/cliente/editar-cliente/editar-cliente.component';
-import { CadastroPordutoComponent } from './components/produto/cadastro-porduto/cadastro-porduto.component';
+
 import { ProdutoComponent } from './components/produto/produto/produto.component';
+import { CadastroProdutoComponent } from './components/produto/cadastro-produto/cadastro-produto.component';
+import { RouterModule } from '@angular/router';
+import { EditarClienteComponent } from './components/cliente/editar-cliente/editar-cliente.component';
+import { FilterProdutoPipe } from './pipes/filter-produto.pipe';
+import { EditarProdutoComponent } from './components/produto/editar-produto/editar-produto.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +27,12 @@ import { ProdutoComponent } from './components/produto/produto/produto.component
     ClienteComponent,
     FilterPipe,
     HeaderComponent,
+    ClienteComponent ,
     EditarClienteComponent,
-    CadastroPordutoComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    CadastroProdutoComponent,
+    FilterProdutoPipe,
+    EditarProdutoComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +40,7 @@ import { ProdutoComponent } from './components/produto/produto/produto.component
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule ,
   ],
   providers: [],
   bootstrap: [AppComponent]
