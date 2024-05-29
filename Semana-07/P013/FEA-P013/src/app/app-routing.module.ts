@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'adiconarProduto', component: CadastroProdutoComponent},
   { path: 'listaProduto', component: ProdutoComponent},
   { path: 'editarProduto/:id', component: EditarProdutoComponent},
-  { path: 'venda', component: VendaComponent},
+  { path: 'contato', component: VendaComponent},
   { path: 'sales/:id', component: SalesComponent},
 
 ];
