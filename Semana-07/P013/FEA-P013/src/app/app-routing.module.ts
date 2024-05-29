@@ -7,6 +7,8 @@ import { EditarClienteComponent } from './components/cliente/editar-cliente/edit
 import { CadastroProdutoComponent } from './components/produto/cadastro-produto/cadastro-produto.component';
 import { ProdutoComponent } from './components/produto/produto/produto.component';
 import { EditarProdutoComponent } from './components/produto/editar-produto/editar-produto.component';
+import { VendaComponent } from './components/purchase/venda/venda.component';
+import { SalesComponent } from './components/purchase/sales/sales.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -16,6 +18,9 @@ const routes: Routes = [
   { path: 'adiconarProduto', component: CadastroProdutoComponent},
   { path: 'listaProduto', component: ProdutoComponent},
   { path: 'editarProduto/:id', component: EditarProdutoComponent},
+  { path: 'venda', component: VendaComponent},
+  { path: 'sales/:id', component: SalesComponent},
+
 ];
 
 @NgModule({

@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="corpo">
+  <div class="container mt-5">
+    <div class="row justify-content-center"> <!-- Adicionando a classe justify-content-center para centralizar -->
+
+      <div class="col-md-8" id="topo">
+        <div class="row"> <!-- Adicionando uma nova linha -->
+          <div class="col-md-6"> <!-- Coluna para o nome "Produto" -->
+            <h3>Produto</h3>
+          </div>
+          <div class="col-md-6"> <!-- Coluna para o nome "Quantidade" -->
+            <h3>Quantidade</h3>
+          </div>
+        </div>
+        <div class="input-group">
+          <select class="form-select" [(ngModel)]="selectedProduct">
+            <option value="Selecione o Produteo"  *ngFor="let product of products" [ngValue]="product">{{ product.descricao }} - R$ {{ product.preco_vista }}</option>
+          </select>
+
+          <input type="number" id="quantity" class="form-control" [(ngModel)]="quantity" min="1" placeholder="Quantidade">
+          <button class="btn btn-primary" (click)="addProduct()">Adicionar</button>
+        </div>
+        <h4 class="mt-3">Carrinho</h4>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of cart">
+            {{ item.product.descricao }} - R$ {{ item.product.preco_vista }} x {{ item.quantity }}
+            <button class="btn btn-danger btn-sm float-end" (click)="removeProduct(item)">Remover</button>
+          </li>
+        </ul>
+
+        <div class="mt-3">
+          <p>Subtotal: R$ {{ subTotal }}</p>
+          <p>Desconto: R$ {{ discount }}</p>
+          <p>Total: R$ {{ totalSale }}</p>
+          <input type="date" class="form-control" [(ngModel)]="saleDate" placeholder="Data da Venda">
+          <select class="form-select mt-2" [(ngModel)]="saleType">
+            <option value="avista">À vista</option>
+            <option value="aprazo">À prazo</option>
+          </select>
+          <button class="btn btn-success mt-2" (click)="concludeSale()">Concluir Venda</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -18,6 +18,8 @@ import { RouterModule } from '@angular/router';
 import { EditarClienteComponent } from './components/cliente/editar-cliente/editar-cliente.component';
 import { FilterProdutoPipe } from './pipes/filter-produto.pipe';
 import { EditarProdutoComponent } from './components/produto/editar-produto/editar-produto.component';
+import { VendaComponent } from './components/purchase/venda/venda.component';
+import { SalesComponent } from './components/purchase/sales/sales.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { EditarProdutoComponent } from './components/produto/editar-produto/edit
     CadastroProdutoComponent,
     FilterProdutoPipe,
     EditarProdutoComponent,
+    VendaComponent,
+    SalesComponent,
   ],
   imports: [
     BrowserModule,

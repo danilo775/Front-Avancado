@@ -52,6 +52,8 @@
         <td>{{ cliente.mais_informacoes }}</td>
         <td><button type="button" class="btn btn-warning" routerLink="/editarCliente/{{ cliente.id }}">Editar</button></td>
         <td><button type="button" class="btn btn-danger" (click)="deletarCliente(cliente.id)">Excluir</button></td>
+        <!-- <td><button type="button" class="btn btn-success" routerLink="/sales">Vender</button></td> -->
+        <td><button type="button" class="btn btn-success" routerLink="/sales/{{ cliente.id }}">Vender</button></td>
       </tr>
     </tbody>
   </table>
